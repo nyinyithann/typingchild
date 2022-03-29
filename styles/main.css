@@ -1,0 +1,52 @@
+@import './_theme.css';
+@import './_fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .theme-btn {
+        @apply flex h-8 w-8 items-center justify-center rounded-full p-1 shadow-lg shadow-200
+            hover:ring-2 hover:ring-300 focus:outline-none
+            md:h-6 md:w-6;
+    }
+    .google-auth-btn {
+        @apply flex items-center bg-white border-[1px] border-slate-300 text-slate-700 rounded-md p-2 outline-none cursor-pointer 
+        hover:bg-slate-100 ring-0 focus:outline-none active:outline-none;
+    }
+    
+    .facebook-auth-btn {
+        @apply flex items-center bg-blue-500 border-[1px] border-slate-200 text-white rounded-md p-2 outline-none cursor-pointer 
+        hover:bg-blue-600 ring-0 focus:outline-none active:outline-none;
+    }
+
+    .try-as-guest-btn {
+        @apply bg-green-600 border-[1px] border-green-600 text-white rounded-md p-2 outline-none cursor-pointer 
+        hover:bg-green-500 hover:border-green-500 ring-0 focus:outline-none active:outline-none;
+    }
+
+    .bg-primary {
+        @apply bg-200/40;
+    }
+
+    .bg-secondary {
+        @apply bg-300/40;
+    }
+
+    .border-primary {
+        @apply border-[1px] border-300/90;
+    }
+
+    .border-secondary {
+        @apply border-[1px] border-100;
+    }
+
+    .btn-primary {
+        @apply bg-primary border-primary rounded-md p-2 text-600 outline-none cursor-pointer hover:bg-200 focus:outline-none active:outline-none;
+    }
+
+    .dialog-border {
+        @apply border-[1px] border-300;
+    }
+}

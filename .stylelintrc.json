@@ -1,0 +1,23 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "extends",
+                    "apply",
+                    "tailwind",
+                    "components",
+                    "utilities",
+                    "screen",
+                    "layer",
+                    "import"
+                ]
+            }
+        ],
+        "indentation": "tab",
+        "number-leading-zero": null,
+        "unit-allowed-list": ["em", "rem", "s", "vw", "vh"]
+    }
+}
