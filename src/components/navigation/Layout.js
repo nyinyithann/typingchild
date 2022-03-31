@@ -3,7 +3,7 @@ import TpHead from 'components/navigation/Head';
 
 function Layout({children}) {
     return (
-        <div className="flex flex-col bg-gradient-to-tr from-sky-100/70 via-200/80 to-blue-100/70">
+        <div className="flex flex-col bg-gradient-to-r from-100/30 via-200/30 to-100/30">
             <TpHead />
             {children}
         </div>

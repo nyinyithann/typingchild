@@ -19,7 +19,7 @@ function Play() {
             <div className="h-[3.6rem]">
                 <NavBar showAuth={true} />
             </div>
-            <div className="flex flex-col items-center justify-center w-full overflow-hidden h-[calc(100vh-3.7rem)]">
+            <div className="flex flex-col items-center justify-center w-full h-[calc(100vh-3.7rem)] overflow-x-hidden 2xl:overflow-hidden">
                 <div className="flex items-center justify-center w-[99vw]">
                     <GameBoard />
                 </div>

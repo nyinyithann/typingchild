@@ -44,7 +44,7 @@ function getState(lessonLines, displayLineNumber) {
     };
 }
 
-const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, displayLineNumber, notifyLessonEnd}, ref) => {
+const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, displayLineNumber, notifyLessonEnd, notifyWhichKey}, ref) => {
 
     const [state, setState] = useState(getState(lessonLines, displayLineNumber));
 
@@ -93,6 +93,7 @@ const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, les
         e.preventDefault();
         e.stopImmediatePropagation();
         document.activeElement.blur();
+        notifyWhichKey(e);
         const {key} = e;
         if (
             key.length === 1 &&
@@ -188,12 +189,12 @@ const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, les
 
     return (
         <div className="flex flex-col justify-center items-center space-y-4">
-            <div className='h-fit ring-0 outline-none grid grid-cols-1 auto-rows-fr content-center px-[2px] lg:px-[12px] py-2 gap-y-[4px] rounded bg-opacity-60 backdrop-filter backdrop-blur-md bg-white/30 shadow-md shadow-200/40'>
+            <div className='h-fit ring-0 outline-none grid grid-cols-1 auto-rows-fr content-center px-[2px] lg:px-[12px] py-2 gap-y-[4px] rounded bg-opacity-60 backdrop-filter backdrop-blur-md bg-white/30 shadow'>
                 {
                     state.displayLines.map(l => {
                         return (
                             l.length > 0 ?
-                                <div key={l[0].line} className="h-fit ring-0 outline-none grid grid-cols-50 auto-rows-fr content-center border-b-[2px] border-b-slate-300 pb-[4px]">
+                                <div key={l[0].line} className="h-fit ring-0 outline-none grid grid-cols-50 auto-rows-fr content-center border-b-[2px] border-b-400/40 pb-[4px]">
                                     {
                                         l.map(n => {
                                             return (

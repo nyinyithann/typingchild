@@ -45,7 +45,7 @@ function getState(lessonLines) {
     };
 }
 
-const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, notifyLessonEnd}, ref) => {
+const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, notifyLessonEnd, notifyWhichKey, showHand}, ref) => {
     const [state, setState] = useState(getState(lessonLines));
     const stateRef = useRef({
         headLine: state.headLine,
@@ -121,6 +121,7 @@ const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lesson
         e.preventDefault();
         e.stopImmediatePropagation();
         document.activeElement.blur();
+        notifyWhichKey(e);
         const {key} = e;
         if (
             key.length === 1 &&
@@ -201,7 +202,7 @@ const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lesson
                     );
                 })}
             </div>
-            <Keyboard keyToPress={state.headLine ? state.headLine[state.selectedPosition]?.value : undefined} />
+            <Keyboard keyToPress={state.headLine ? state.headLine[state.selectedPosition]?.value : undefined} showHand={showHand} />
         </div>
     );
 });

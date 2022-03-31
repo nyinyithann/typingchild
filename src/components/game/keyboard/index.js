@@ -4,10 +4,10 @@ import {LeftHand} from "components/game/keyboard/LeftHand";
 import {RightHand} from "components/game/keyboard/RightHand";
 import React from "react";
 
-function Keyboard({keyToPress}) {
+function Keyboard({keyToPress, showHand}) {
     return (
-        <div className="w-full h-fit">
-            <div className="flex flex-col justify-center items-center w-full shadow-inner shadow-200 bg-100/70 space-y-1 md:space-y-[0.4rem] rounded-md relative p-1 md:p-3">
+        <div className="w-full h-fit rounded-md bg-white shadow-md shadow-slate-200">
+            <div className="flex flex-col justify-center items-center w-full space-y-1 md:space-y-[0.4rem] rounded-md relative p-1 md:p-3 mt-[0.1rem] bg-opacity-60 backdrop-filter backdrop-blur-xl bg-white/90">
                 <div className="grid grid-cols-kfirst w-full gap-x-[1px] md:gap-x-1">
                     <Key key="~`" values={['~', '`']} keyToPress={keyToPress} />
                     <Key key="!1" values={['!', '1']} keyToPress={keyToPress} />
@@ -76,12 +76,17 @@ function Keyboard({keyToPress}) {
                     <Key key="rightalt" values={['ALT']} textSpanStyle="block w-full pr-[6px] text-right" keyToPress={keyToPress} />
                     <Key key="rightctrl" values={['CTRL']} textSpanStyle="block w-full pr-[4px] text-right" keyToPress={keyToPress} />
                 </div>
-                <LeftHand keyToPress={keyToPress} />
-                <RightHand keyToPress={keyToPress} />
+                {
+                    showHand ?
+                        <>
+                            <LeftHand keyToPress={keyToPress} />
+                            <RightHand keyToPress={keyToPress} />
+                        </> : null
+                }
             </div>
         </div >
     )
 }
 
-export default React.memo(Keyboard, (prev, current) => prev.keyToPress === current.keyToPress);
+export default React.memo(Keyboard, (prev, current) => prev.keyToPress === current.keyToPress && prev.showHand === current.showHand);
 
