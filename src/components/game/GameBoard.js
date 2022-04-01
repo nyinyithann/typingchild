@@ -12,7 +12,7 @@ import React, {useEffect, useRef, useState} from "react";
 import toast, {Toaster} from 'react-hot-toast';
 import {useAuth} from 'services/firebase/auth';
 import {gameUserStoreSelector, lessonStoreSelector, useGameUserStore, useLessonStore} from 'stores';
-import {Switch} from '@headlessui/react';
+import Toggle from 'components/game/Toggle';
 
 const lettersPerLine = 9;
 const linesPerSession = 2;
@@ -242,7 +242,8 @@ export default function GameBoard() {
       ? setCapsLockOn(true)
       : setCapsLockOn(false);
   }, []);
-  const [showHand, setShowHand] = useState(true)
+  const [showHand, setShowHand] = useState(true);
+  const [showKeyboard, setShowKeyboard] = useState(true);
   return (
     <div className="flex h-screen w-full flex-col py-[1rem] sm:py-20 md:py-[2rem] xl:py-[2.5rem]">
       <Toaster position="top-right" toastOptions={{
@@ -255,29 +256,23 @@ export default function GameBoard() {
       <div className="grid auto-rows-min content-center gap-4 px-4 md:px-[4rem] xl:px-[16rem] 2xl:px-[22rem]">
         <div className="flex w-full space-x-1 text-lg h-fit">
           <ScoreBox level={level} xp={xp} levelXP={levelXP} />
-
-          <div className="flex-1 flex items-center justify-start invisible lg:visible xl:pl-4">
-            <div className="flex items-center justify-center space-x-1">
-              <div className="flex items-center justify-center mt-1">
-                <img src="static/images/f.png" alt="" className="h-[2rem] w-[1.5rem]" />
-                <img src="static/images/j.png" alt="" className="ml-[-5px] h-[2rem] w-[1.5rem]" />
-              </div>
-              <Switch
-                checked={showHand}
-                onChange={() => setShowHand(prev => !prev)}
-                className={`${showHand ? 'bg-400' : 'bg-200'} relative inline-flex items-center justify-center flex-shrink-0 h-[1.5rem] w-[3rem] rounded-sm cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none`}
-              >
-                <span
-                  className={`${showHand ? 'translate-x-[0.75rem]' : 'translate-x-[-0.75rem]'} pointer-events-none inline-block h-[1.2rem] w-[1.2rem] rounded-sm bg-white shadow-lg transform ring-0 transition ease-in-out duration-200 z-50`}
-                />
-                <div className="flex justify-between text-[0.7rem] absolute top-0 left-0 right-0 px-[4px] text-50 tracking-wide leading-[1.5rem]">
-                  <span>On</span>
-                  <span>Off</span>
+          <div className="flex-1 flex items-center justify-start space-x-4 invisible lg:visible xl:pl-4">
+            <Toggle className="flex items-center justify-center space-x-1" checked={showHand} onChange={setShowHand}>
+              <Toggle.Icon>
+                <div className="flex items-center justify-center">
+                  <img src="static/images/f.png" alt="" className="h-[2rem] w-[1.5rem]" />
+                  <img src="static/images/j.png" alt="" className="ml-[-5px] h-[2rem] w-[1.5rem]" />
                 </div>
-              </Switch>
-            </div>
+              </Toggle.Icon>
+            </Toggle>
+            <Toggle className="flex items-center justify-center space-x-1" checked={showKeyboard} onChange={setShowKeyboard}>
+              <Toggle.Icon>
+                <div className="flex items-center justify-center">
+                  <img src="static/images/kb.png" alt="" className="h-[1.8rem] w-[3rem]" />
+                </div>
+              </Toggle.Icon>
+            </Toggle>
           </div>
-
           <div className="flex justify-end">
             <button
               disabled={levelUpDialogOpen}
@@ -313,8 +308,8 @@ export default function GameBoard() {
         </div>
         {
           getMode(selectedLesson.content) === LETTER_MODE
-            ? <LetterTypingBoard ref={keyEventRef} lessonId={selectedLesson.id} lessonBonusPoints={selectedLesson.bonusPoints} lessonLines={letterLessonLines} notifyLessonEnd={notifyLessonEnd} notifyWhichKey={notifyWhichKey} showHand={showHand} />
-            : <ParagraphTypingBoard ref={keyEventRef} lessonId={selectedLesson.id} lessonBonusPoints={selectedLesson.bonusPoints || 0} lessonLines={paragraphLessonLines} displayLineNumber={4} notifyLessonEnd={notifyLessonEnd} notifyWhichKey={notifyWhichKey} showHand={showHand} />
+            ? <LetterTypingBoard ref={keyEventRef} lessonId={selectedLesson.id} lessonBonusPoints={selectedLesson.bonusPoints} lessonLines={letterLessonLines} notifyLessonEnd={notifyLessonEnd} notifyWhichKey={notifyWhichKey} showHand={showHand} showKeyboard={showKeyboard} />
+            : <ParagraphTypingBoard ref={keyEventRef} lessonId={selectedLesson.id} lessonBonusPoints={selectedLesson.bonusPoints || 0} lessonLines={paragraphLessonLines} displayLineNumber={4} notifyLessonEnd={notifyLessonEnd} notifyWhichKey={notifyWhichKey} showHand={showHand} showKeyboard={showKeyboard} />
         }
       </div>
       <LevelUpDialog level={level} isOpen={levelUpDialogOpen} onClose={handleLevelupDialogClose} />

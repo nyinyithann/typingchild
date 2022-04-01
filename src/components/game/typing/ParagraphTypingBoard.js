@@ -44,7 +44,7 @@ function getState(lessonLines, displayLineNumber) {
     };
 }
 
-const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, displayLineNumber, notifyLessonEnd, notifyWhichKey}, ref) => {
+const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, displayLineNumber, notifyLessonEnd, notifyWhichKey, showHand, showKeyboard}, ref) => {
 
     const [state, setState] = useState(getState(lessonLines, displayLineNumber));
 
@@ -211,7 +211,11 @@ const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, les
                     })
                 }
             </div>
-            <Keyboard keyToPress={state.displayLines && state.displayLines.length > 0 ? state.displayLines[state.selectedLineIndex % displayLineNumber][state.selectedPosition]?.value : undefined} />
+            {
+                showKeyboard
+                    ? <Keyboard keyToPress={state.displayLines && state.displayLines.length > 0 ? state.displayLines[state.selectedLineIndex % displayLineNumber][state.selectedPosition]?.value : undefined} showHand={showHand} />
+                    : null
+            }
         </div>
     );
 });

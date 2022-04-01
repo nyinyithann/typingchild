@@ -45,7 +45,7 @@ function getState(lessonLines) {
     };
 }
 
-const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, notifyLessonEnd, notifyWhichKey, showHand}, ref) => {
+const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lessonLines, notifyLessonEnd, notifyWhichKey, showHand, showKeyboard}, ref) => {
     const [state, setState] = useState(getState(lessonLines));
     const stateRef = useRef({
         headLine: state.headLine,
@@ -191,7 +191,7 @@ const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lesson
 
     return (
         <div className="flex flex-col justify-center items-center space-y-4">
-            <div className='h-fit ring-0 outline-none grid grid-cols-9 grid-rows-2 gap-1 md:gap-2 content-center'>
+            <div className='h-fit ring-0 outline-none grid grid-cols-9 grid-rows-2 gap-1 md:gap-2 content-center px-3'>
                 {state.headLine?.map((t) => {
                     return (
                         <Letter
@@ -202,7 +202,11 @@ const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lesson
                     );
                 })}
             </div>
-            <Keyboard keyToPress={state.headLine ? state.headLine[state.selectedPosition]?.value : undefined} showHand={showHand} />
+            {
+                showKeyboard
+                    ? <Keyboard keyToPress={state.headLine ? state.headLine[state.selectedPosition]?.value : undefined} showHand={showHand} />
+                    : null
+            }
         </div>
     );
 });
