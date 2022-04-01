@@ -5,6 +5,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: theme('backgroundColor.200');
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: theme('backgroundColor.300');
+    border-radius: 100vh;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: theme('backgroundColor.400');
+  }
+}
+
 @layer components {
     .theme-btn {
         @apply flex h-8 w-8 items-center justify-center rounded-full p-1 shadow-lg shadow-200
@@ -49,4 +70,6 @@
     .dialog-border {
         @apply border-[1px] border-300;
     }
+
+    
 }
