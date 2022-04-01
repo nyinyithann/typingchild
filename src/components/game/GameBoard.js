@@ -140,9 +140,13 @@ export default function GameBoard() {
   const [notifiable, setNotifiable] = useState(false);
   const [notiClose, setNotiClose] = useState(false);
   const [capsLockOn, setCapsLockOn] = useState(false);
+  const [showHand, setShowHand] = useState(true);
+  const [showKeyboard, setShowKeyboard] = useState(true);
 
   const selectedLessonIdRef = useRef();
   selectedLessonIdRef.current = selectedLesson.id;
+  const selectedLessonBonusPoints = useRef();
+  selectedLessonBonusPoints.current = selectedLesson.bonusPoints;
 
   useEffect(async () => {
     await loadLessons();
@@ -172,6 +176,7 @@ export default function GameBoard() {
   }, [lastLessonId, defaultLessons]);
 
   useEffect(async () => {
+    selectedLessonBonusPoints.current = selectedLesson.bonusPoints;
     const mode = getMode(selectedLesson.content);
     if (mode === LETTER_MODE) {
       const letterLines = convertToLetterLesson(selectedLesson.content);
@@ -209,41 +214,40 @@ export default function GameBoard() {
   }, [xp, authUser.uid]);
 
   const notifyLessonEnd = React.useCallback(() => {
-    const nextLessonId = getNextLessonId(selectedLessonIdRef.current);
-    updateLastLessonId(nextLessonId);
-    const bonusPoints = selectedLesson.bonusPoints;
+    const bonusPoints = selectedLessonBonusPoints.current;
     toast.custom((t) => (
       <ToastPanel toast={t} showThumb={true} info={['You just finished a lesson.', `You earned ${bonusPoints} bonus points for finishing the lesson.`]} />
     ));
-  });
+    const nextLessonId = getNextLessonId(selectedLessonIdRef.current);
+    updateLastLessonId(nextLessonId);
+  }, []);
 
   const openLessonDialog = React.useCallback(() => {
     keyEventRef.current?.detachKeyEvent();
     setLessonDialogOpen(true);
-  });
+  }, [keyEventRef.current]);
 
   const closeLessonDialog = React.useCallback(() => {
     keyEventRef.current?.attachKeyEvent();
     setLessonDialogOpen(false);
-  });
+  }, [keyEventRef.current]);
 
   const handleSelectLesson = React.useCallback((lessonId) => {
     updateLastLessonId(lessonId);
     closeLessonDialog();
-  });
+  }, []);
 
   const handleLevelupDialogClose = React.useCallback(() => {
     keyEventRef.current?.attachKeyEvent();
     setLevelUpDialogOpen(false);
-  });
+  }, [keyEventRef.current]);
 
   const notifyWhichKey = React.useCallback((event) => {
     event.getModifierState("CapsLock")
       ? setCapsLockOn(true)
       : setCapsLockOn(false);
   }, []);
-  const [showHand, setShowHand] = useState(true);
-  const [showKeyboard, setShowKeyboard] = useState(true);
+
   return (
     <div className="flex h-screen w-full flex-col py-[1rem] sm:py-20 md:py-[2rem] xl:py-[2.5rem]">
       <Toaster position="top-right" toastOptions={{
