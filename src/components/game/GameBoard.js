@@ -114,8 +114,9 @@ export default function GameBoard() {
     saveGameUser,
     resetGameUser,
     resetError: gameUserResetError,
-    updateLastLessonId}
-    = useGameUserStore(gameUserStoreSelector);
+    updateLastLessonId,
+    updatePracticedLesson,
+  } = useGameUserStore(gameUserStoreSelector);
   const {level, xp, levelXP, startLevel, lastLessonId} = gameUser;
 
   const {
@@ -219,7 +220,8 @@ export default function GameBoard() {
       <ToastPanel toast={t} showThumb={true} info={['You just finished a lesson.', `You earned ${bonusPoints} bonus points for finishing the lesson.`]} />
     ));
     const nextLessonId = getNextLessonId(selectedLessonIdRef.current);
-    updateLastLessonId(nextLessonId);
+    //updateLastLessonId(nextLessonId);
+    updatePracticedLesson(selectedLessonIdRef.current, nextLessonId);
   }, []);
 
   const openLessonDialog = React.useCallback(() => {

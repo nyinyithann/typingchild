@@ -1,5 +1,6 @@
-import React, {useState, useMemo} from "react";
+import React, {useMemo} from "react";
 import {Vec} from '@nyinyithann/vec.js';
+import {gameUserStoreSelector, useGameUserStore} from 'stores';
 
 function Tick() {
     return (
@@ -21,6 +22,10 @@ function LessonInfo({label, value}) {
 }
 
 function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
+    const {getPracticedTimes} = useGameUserStore(gameUserStoreSelector);
+    const practicedTimes = React.useMemo(() => {
+        return getPracticedTimes(lesson.id);
+    }, [lesson]);
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -46,7 +51,7 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
                             <Tick />
                         </span>
                         <LessonInfo label="Bonus Points" value={lesson.bonusPoints} />
-                        <LessonInfo label="Practiced" value={0} />
+                        <LessonInfo label="Practiced" value={practicedTimes} />
                     </div>
                     :
                     <div className={`flex flex-col flex-wrap items-center justify-center border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] first:mt-[0.8rem] first:ml-[2rem] ${selectedLessonId === lesson.id ? 'bg-100' : ''}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
@@ -63,7 +68,7 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
                             </span>
                         </ul>
                         <LessonInfo label="Bonus Points" value={lesson.bonusPoints} />
-                        <LessonInfo label="Practiced" value={0} />
+                        <LessonInfo label="Practiced" value={practicedTimes} />
                     </div>
             }
         </>
@@ -71,11 +76,9 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
 }
 
 function LessonItemList({title, lessons, onLessonSelect, selectedLessonId}) {
-    const [sortedLessons, setSortedLessons] = useState([]);
-
-    useMemo(() => {
+    const sortedLessons = useMemo(() => {
         lessons.sort((x, y) => x.id - y.id);
-        setSortedLessons(lessons);
+        return lessons
     }, lessons);
 
     return (
@@ -96,9 +99,7 @@ function LessonItemList({title, lessons, onLessonSelect, selectedLessonId}) {
 }
 
 function DefaultLessonPanel({lessons, onLessonSelect, selectedLessonId}) {
-    const [sortedLessonGroups, setSortedLessongroups] = useState(Vec.empty());
-
-    useMemo(() => {
+    const sortedLessonGroups = useMemo(() => {
         let groupsByTitle = Vec.from(lessons).groupBy(l => l.title);
         groupsByTitle.sort(([tx, _], [ty, __]) => {
             try {
@@ -113,11 +114,12 @@ function DefaultLessonPanel({lessons, onLessonSelect, selectedLessonId}) {
             }
         });
         try {
-            groupsByTitle = groupsByTitle.map(([key, value]) => {
+            return groupsByTitle.map(([key, value]) => {
                 return [key.split('#')[1], value];
             });
-        } catch {}
-        setSortedLessongroups(groupsByTitle);
+        } catch {
+            return Vec.empty();
+        }
     }, lessons);
 
     return (
@@ -130,4 +132,3 @@ function DefaultLessonPanel({lessons, onLessonSelect, selectedLessonId}) {
 }
 
 export default DefaultLessonPanel;
-

@@ -17,8 +17,6 @@ function LessonDialog({isOpen, onClose, onOk, selectedLessonId}) {
         }
     };
 
-    // h-[calc(100vh-10rem)] 
-    // min-h-[calc(100vh-12rem)]
     return (
         <Dialog as="div" open={isOpen} onClose={function () {}} className={`${theme} fixed inset-0 z-[100] `}>
             <div className="min-h-screen px-8 -mt-8 lg:mt-0 xl:px-4 text-center ring-0 outline-none">
