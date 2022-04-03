@@ -20,7 +20,7 @@ function Profile() {
                     <>
                         <Popover.Button
                             type="button"
-                            className={`flex items-center justify-center rounded-full h-8 w-8 bg-200 text-700 p-[2px] hover:bg-400 hover:text-white hover:ring-0 focus:outline-none focus:ring-0 active:ring-0 ${
+                            className={`flex items-center justify-center rounded-full h-8 w-8 bg-200 text-700 p-[2px] hover:bg-400 hover:text-white hover:ring-0 focus:outline-none focus:ring-0 active:ring-0 dark:bg-gray-400 ${
                                 open ? 'border-400 brightness-100' : ''
                                 }`}
                         >
@@ -35,7 +35,7 @@ function Profile() {
                                     <DefaultProfileImage className="h-6 w-6" />
                             }
                         </Popover.Button>
-                        <Popover.Panel className="absolute right-[-4px] top-10 z-50 w-[16rem] rounded-md border-[1px] border-200 bg-white shadow-lg">
+                        <Popover.Panel className="absolute right-[-4px] top-10 z-50 w-[16rem] rounded-md border-[1px] border-200 bg-white shadow-lg dark:bg-gray-600">
                             <div className="flex flex-col items-stretch justify-start space-y-2">
                                 <div className="flex items-center justify-start p-2">
                                     {
@@ -48,14 +48,14 @@ function Profile() {
                                             :
                                             <DefaultProfileImage className="h-24 w-24" />
                                     }
-                                    <span className="ml-2 text-lg text-700">{`${
+                                    <span className="ml-2 text-lg text-700 dark:text-gray-400">{`${
                                         authUser?.name ?? 'Hi'
                                         }`}</span>
                                 </div>
                                 <div className="flex items-center justify-center border-t-[1px] border-200 p-2">
                                     <button
                                         type="button"
-                                        className="btn-primary flex w-full items-center justify-center space-x-4"
+                                        className="btn-primary flex w-full items-center justify-center space-x-4 dark:text-gray-400"
                                         onClick={handleLogout}
                                     >
                                         <svg

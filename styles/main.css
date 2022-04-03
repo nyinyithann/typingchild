@@ -64,7 +64,7 @@
     }
 
     .btn-primary {
-        @apply bg-primary border-primary rounded-md p-2 text-600 outline-none cursor-pointer hover:bg-200 focus:outline-none active:outline-none;
+        @apply bg-primary border-primary rounded-md p-2 text-600 outline-none cursor-pointer hover:bg-200 focus:outline-none active:outline-none dark:hover:bg-gray-800;
     }
 
     .dialog-border {

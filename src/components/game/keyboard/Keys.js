@@ -2,7 +2,7 @@ import React from "react"
 
 const getStyle = (values) => {
     let result = "";
-    const baseStyle = "flex justify-center items-center content-center border-[1px] border-300 bg-white/90 rounded-[0.2rem] text-900/70 drop-shadow-[-1px_2px_1px_rgba(200,200,200,0.5)] font-semibold font-keyboard md:leading-[1.4rem]";
+    const baseStyle = "flex justify-center items-center content-center border-[1px] border-300 bg-white/90 rounded-[0.2rem] text-900/70 dark:text-slate-400 drop-shadow-[-1px_2px_1px_rgba(200,200,200,0.5)] font-semibold font-keyboard md:leading-[1.4rem] dark:bg-gray-600";
     const valueCount = values.length;
     const firstValue = values[0];
     const responsiveStyle = "" +
@@ -22,7 +22,7 @@ const getStyle = (values) => {
 }
 
 const cmp = (prev, current) => prev.keyToPress === current.keyToPress;
-const pressStyle = "bg-sky-400/80 text-800 border-[1px] border-sky-400 brightness-110 xl:animate-key_fadein";
+const pressStyle = "bg-sky-400/80 dark:bg-sky-400/80 dark:text-gray-800 text-800 border-[1px] border-sky-400 brightness-110 xl:animate-key_fadein";
 
 export const Key = React.memo(({values, textSpanStyle, keyToPress}) => {
     const cn = React.useMemo(() => {

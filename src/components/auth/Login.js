@@ -21,7 +21,7 @@ function Login() {
                 <>
                     <Menu.Button
                         type="button"
-                        className={`flex space-x-2 rounded ring-0 outline-none bg-200 saturate-150 px-2 py-1 text-700 hover:bg-400 hover:text-white ${
+                        className={`flex space-x-2 rounded ring-0 outline-none bg-200 saturate-150 px-2 py-1 text-700 hover:bg-400 hover:text-white dark:bg-gray-400 ${
                             open ? 'bg-100' : ''
                             }`}
                     >
@@ -41,7 +41,7 @@ function Login() {
                         </svg>
                         <span className="inline-block">Login</span>
                     </Menu.Button>
-                    <Menu.Items as="div" className="absolute right-[-2px] top-10 w-[16rem] rounded-md border-[1px] border-slate-300 bg-white p-2 shadow-lg flex flex-col space-y-2 focus:outline-none">
+                    <Menu.Items as="div" className="absolute right-[-2px] top-10 w-[16rem] rounded-md border-[1px] border-slate-300 bg-white p-2 shadow-lg flex flex-col space-y-2 focus:outline-none dark:bg-gray-600">
                         <Menu.Item>
                             <GoogleAuthBtn
                                 className="google-auth-btn justify-start w-full pl-6"

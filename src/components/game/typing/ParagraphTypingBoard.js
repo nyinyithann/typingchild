@@ -15,12 +15,12 @@ const pm_TextStyleBase = 'font-mono block text-transparent bg-clip-text bg-gradi
 const pm_BgStyleBase = "text-center rounded-sm";
 
 const pm_NormalStyle = {
-    text: `${pm_TextStyleBase} from-slate-900 via-gray-700 to-slate-500 drop-shadow`,
+    text: `${pm_TextStyleBase} from-slate-900 via-gray-700 to-slate-500 drop-shadow dark:text-gray-400`,
     bg: `${pm_BgStyleBase}`
 };
 
 const pm_SelectedStyle = {
-    text: `${pm_TextStyleBase} from-sky-800 via-sky-700 to-sky-900 drop-shadow-lg`,
+    text: `${pm_TextStyleBase} from-sky-800 via-sky-700 to-sky-900 drop-shadow-lg dark:text-gray-200`,
     bg: `${pm_BgStyleBase} border-b-[4px] border-b-sky-500 bg-sky-400/40`
 };
 
@@ -189,7 +189,7 @@ const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, les
 
     return (
         <div className="flex flex-col justify-center items-center space-y-4">
-            <div className='h-fit ring-0 outline-none grid grid-cols-1 auto-rows-fr content-center px-[2px] lg:px-[12px] py-2 gap-y-[4px] rounded bg-opacity-60 backdrop-filter backdrop-blur-md bg-white/30 shadow'>
+            <div className='h-fit ring-0 outline-none grid grid-cols-1 auto-rows-fr content-center px-[2px] lg:px-[12px] py-2 gap-y-[4px] rounded bg-opacity-60 backdrop-filter backdrop-blur-md bg-white/30 shadow dark:bg-gray-600/40'>
                 {
                     state.displayLines.map(l => {
                         return (

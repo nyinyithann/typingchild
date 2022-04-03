@@ -285,4 +285,88 @@
     --color-primary-800: 159 18 57;
     --color-primary-900: 136 19 55;
 }
+
+.theme-olive {
+    --color-primary-transparent: theme('colors.transparent');
+    --color-primary-50: 248 249 241;
+    --color-primary-100: 236 238 215;
+    --color-primary-200: 213 219 172;
+    --color-primary-300: 193 200 129;
+    --color-primary-400: 183 187 100;
+    --color-primary-500: 178 173 85;
+    --color-primary-600: 155 143 68;
+    --color-primary-700: 129 112 60;
+    --color-primary-800: 107 90 53;
+    --color-primary-900: 89 76 46;
+}
+
+.theme-sunflower {
+    --color-primary-transparent: theme('colors.transparent');
+    --color-primary-50: 250 252 234;
+    --color-primary-100:247 250 199;
+    --color-primary-200:241 245 147;
+    --color-primary-300:237 239 85;
+    --color-primary-400:232 225 33;
+    --color-primary-500:217 202 25;
+    --color-primary-600:187 161 19;
+    --color-primary-700:149 118 19; 
+    --color-primary-800:124 93 23;
+    --color-primary-900:106 76 25;
+}
+
+.theme-lightgray {
+    --color-primary-transparent: theme('colors.transparent');
+    --color-primary-50: 255 255 255;
+    --color-primary-100:240 240 240;
+    --color-primary-200:230 230 230;
+    --color-primary-300:204 204 204;
+    --color-primary-400:184 184 184;
+    --color-primary-500:168 168 168;
+    --color-primary-600:158 158 158;
+    --color-primary-700:148 148 148;
+    --color-primary-800:135 135 135;
+    --color-primary-900:125 125 125;
+}
+
+.theme-monalisa {
+    --color-primary-transparent: theme('colors.transparent');
+    --color-primary-50: 254 242 242;
+    --color-primary-100:255 225 225;
+    --color-primary-200:255 200 200;
+    --color-primary-300:255 148 148;
+    --color-primary-400:253 108 10;
+    --color-primary-500:245 62 62;
+    --color-primary-600:226 32 32;
+    --color-primary-700:190 23 23;
+    --color-primary-800:157 23 23;
+    --color-primary-900:130 26 26;
+}
+
+.theme-coffee {
+    --color-primary-transparent: theme('colors.transparent');
+    --color-primary-50: 251 246 241;
+    --color-primary-100:245 235 223;
+    --color-primary-200:235 211 189;
+    --color-primary-300:222 181 147;
+    --color-primary-400:207 144 104;
+    --color-primary-500:197 117 74; 
+    --color-primary-600:183 97 63;
+    --color-primary-700:152 76 54;
+    --color-primary-800:123 64 49;
+    --color-primary-900:97 52 41;
+}
+
+.theme-polo {
+    --color-primary-transparent: theme('colors.transparent');
+    --color-primary-50: 243 247 250;
+    --color-primary-100:233 239 246;
+    --color-primary-200:214 225 239;
+    --color-primary-300:189 205 228;
+    --color-primary-400:162 179 215;
+    --color-primary-500:136 152 200;
+    --color-primary-600:114 126 185;
+    --color-primary-700:97 107 161;
+    --color-primary-800:80 89 131;
+    --color-primary-900:69 75 106;
+}
 /* purgecss end ignore */

@@ -24,39 +24,40 @@ ColorButton.propTypes = {
 
 const themeList = [
     [
+        {color: '#000000', theme: 'dark'},
         {color: '#94A3B8', theme: 'theme-slate'},
-        {color: '#9CA3AF', theme: 'theme-gray'},
-        {color: '#A1A1AA', theme: 'theme-zinc'},
         {color: '#A3A3A3', theme: 'theme-neutral'},
+        {color: '#cccccc', theme: 'theme-lightgray'},
     ],
     [
-        {color: '#A8A29E', theme: 'theme-stone'},
-        {color: '#F87171', theme: 'theme-red'},
+        {color: '#FB7185', theme: 'theme-rose'},
+        {color: '#F472B6', theme: 'theme-pink'},
+        {color: '#ff9494', theme: 'theme-monalisa'},
+        {color: '#cf9068', theme: 'theme-coffee'},
+    ],
+    [
         {color: '#FB923C', theme: 'theme-orange'},
-        {color: '#FBBF24', theme: 'theme-amber'},
+        {color: '#b2ad55', theme: 'theme-olive'},
+        {color: '#FACC15', theme: 'theme-yellow'},
+        {color: '#e8e121', theme: 'theme-sunflower'},
     ],
     [
-        {color: '#FACC15', theme: 'theme-yellow'},
-        {color: '#A3E635', theme: 'theme-lime'},
         {color: '#4ADE80', theme: 'theme-green'},
         {color: '#34D399', theme: 'theme-emerald'},
+        {color: '#2DD4BF', theme: 'theme-teal'},
+        {color: '#A3E635', theme: 'theme-lime'},
     ],
     [
-        {color: '#2DD4BF', theme: 'theme-teal'},
-        {color: '#22D3EE', theme: 'theme-cyan'},
-        {color: '#38BDF8', theme: 'theme-sky'},
         {color: '#60A5FA', theme: 'theme-blue'},
+        {color: '#38BDF8', theme: 'theme-sky'},
+        {color: '#22D3EE', theme: 'theme-cyan'},
+        {color: '#a2b3d7', theme: 'theme-polo'},
     ],
     [
         {color: '#818CF8', theme: 'theme-indigo'},
         {color: '#A78BFA', theme: 'theme-violet'},
         {color: '#C084FC', theme: 'theme-purple'},
         {color: '#E879F9', theme: 'theme-fuchsia'},
-    ],
-    [
-        {color: '#F472B6', theme: 'theme-pink'},
-        {color: '#FB7185', theme: 'theme-rose'},
-        {color: '#000000', theme: 'dark'},
     ],
 ];
 
@@ -73,7 +74,7 @@ function ThemeMenu() {
     return (
         <Menu as="div" className="relative flex items-center text-left">
             <Menu.Button
-                className="flex h-8 w-8 items-center justify-center rounded-full border-transparent bg-200 saturate-150 text-700  hover:bg-400 hover:text-white focus:outline-none active:bg-400 active:text-500"
+                className="flex h-8 w-8 items-center justify-center rounded-full border-transparent bg-200 saturate-150 text-700  hover:bg-400 hover:text-white focus:outline-none active:bg-400 active:text-500 dark:bg-gray-400"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +93,7 @@ function ThemeMenu() {
                 as="div"
                 className="shadow-lg; absolute right-1 top-6 mt-4 flex
             w-[12rem] origin-top-right flex-col rounded border-[1px] border-200
-            bg-100 p-1 focus:outline-none md:w-40"
+            bg-100 p-1 focus:outline-none md:w-40 dark:bg-gray-600"
             >
                 <Menu.Item>
                     <div className="z-10 flex flex-col">
