@@ -26,7 +26,7 @@ const pm_SelectedStyle = {
 
 const pm_CorrectedStyle = {
     text: `${pm_TextStyleBase} from-green-500/80 via-green-800 to-green-500 drop-shadow-lg`,
-    bg: `${pm_BgStyleBase} border-b-[4px] border-b-transparent bg-green-200/60`
+    bg: `${pm_BgStyleBase} border-b-[4px] border-b-transparent bg-green-200/60 dark:border-b-green-200/60`
 };
 
 const pm_IncorrectedShakeXStyle = {

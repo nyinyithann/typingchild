@@ -6,8 +6,8 @@ import React from "react";
 
 function Keyboard({keyToPress, showHand}) {
     return (
-        <div className="w-full h-fit rounded-md bg-white shadow-md shadow-slate-200 dark:bg-slate-600 dark:shadow-none">
-            <div className="flex flex-col justify-center items-center w-full space-y-1 md:space-y-[0.4rem] rounded-md relative p-1 md:p-3 mt-[0.1rem] bg-opacity-60 backdrop-filter backdrop-blur-xl bg-white/90 dark:bg-gray-700/50">
+        <div className="w-full h-fit rounded-md bg-100 shadow-md shadow-slate-200 dark:bg-slate-600 dark:shadow-none">
+            <div className="flex flex-col justify-center items-center w-full space-y-1 md:space-y-[0.4rem] rounded-md relative p-1 md:p-3 mt-[0.1rem] bg-opacity-60 backdrop-filter backdrop-blur-xl bg-300/30 dark:bg-gray-700/50">
                 <div className="grid grid-cols-kfirst w-full gap-x-[1px] md:gap-x-1">
                     <Key key="~`" values={['~', '`']} keyToPress={keyToPress} />
                     <Key key="!1" values={['!', '1']} keyToPress={keyToPress} />

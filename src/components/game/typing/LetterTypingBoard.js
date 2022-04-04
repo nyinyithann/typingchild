@@ -13,23 +13,19 @@ const lm_TextStyleBase = 'font-typing block text-center text-transparent bg-clip
     '2xl:h-[8rem] 2xl:w-[8rem] 2xl:text-[5.4rem]';
 const lm_BgStyleBase = "flex items-center justify-center border-[2px] rounded-md";
 const lm_NormalStyle = {
-    text: `${lm_TextStyleBase} from-slate-500 to-gray-600 drop-shadow brightness-125`,
-    bg: `${lm_BgStyleBase} border-300/90`
+    text: `${lm_TextStyleBase} from-slate-500 to-gray-600 drop-shadow brightness-125 dark:text-gray-500`,
+    bg: `${lm_BgStyleBase} border-300/90 dark:border-gray-600`
 };
 const lm_SelectedStyle = {
-    text: `${lm_TextStyleBase} from-sky-800 via-sky-700 to-sky-900 drop-shadow-lg brightness-125`,
+    text: `${lm_TextStyleBase} from-sky-800 via-sky-700 to-sky-900 drop-shadow-lg brightness-125 dark:text-gray-100`,
     bg: `${lm_BgStyleBase} bg-sky-400/60 border-sky-500/90`
 };
 const lm_CorrectedStyle = {
-    text: `${lm_TextStyleBase} from-green-400/30 via-green-400/80 to-green-400/30 drop-shadow-lg brightness-50`,
+    text: `${lm_TextStyleBase} from-green-400/30 via-green-400/80 to-green-400/30 drop-shadow-lg brightness-50 dark:text-gray-500`,
     bg: `${lm_BgStyleBase} bg-green-400/60 border-green-500/90`
 };
-const lm_IncorrectedShakeYStyle = {
-    text: `${lm_TextStyleBase} from-red-400/30 via-red-400/80 to-red-400/30 drop-shadow-lg brightness-50`,
-    bg: `${lm_BgStyleBase} border-red-500/90 bg-red-700/60 animate-shakeY`
-};
 const lm_IncorrectedShakeXStyle = {
-    text: `${lm_TextStyleBase} from-red-400/30 via-red-400/80 to-red-400/30 drop-shadow-lg brightness-50`,
+    text: `${lm_TextStyleBase} from-red-400/30 via-red-400/80 to-red-400/30 drop-shadow-lg brightness-50 dark:text-gray-600`,
     bg: `${lm_BgStyleBase} border-red-500/90 bg-red-700/60 animate-shakeX`
 };
 

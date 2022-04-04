@@ -13,16 +13,54 @@
 
   .scrollbar::-webkit-scrollbar-track {
     border-radius: 100vh;
-    background: theme('backgroundColor.200');
+    background: theme('backgroundColor.transparent');
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: theme('backgroundColor.300');
+    background: theme('backgroundColor.transparent');
     border-radius: 100vh;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: theme('backgroundColor.400');
+  }
+
+  .lesson-scrollbar::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .lesson-scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: theme('backgroundColor.200');
+  }
+
+  .lesson-scrollbar::-webkit-scrollbar-thumb {
+    background: theme('backgroundColor.300');
+    border-radius: 100vh;
+  }
+
+  .lesson-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: theme('backgroundColor.400');
+  }
+
+  .dark-scrollbar::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dark-scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: theme('colors.gray.700');
+  }
+
+  .dark-scrollbar::-webkit-scrollbar-thumb {
+    background: theme('colors.gray.700');
+    border-radius: 100vh;
+  }
+
+  .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.gray.600');
   }
 }
 
@@ -48,23 +86,23 @@
     }
 
     .bg-primary {
-        @apply bg-200/40;
+        @apply bg-200;
     }
 
     .bg-secondary {
-        @apply bg-300/40;
+        @apply bg-300/70;
     }
 
     .border-primary {
-        @apply border-[1px] border-300/90;
+        @apply border-[1px] border-400/90;
     }
 
     .border-secondary {
-        @apply border-[1px] border-100;
+        @apply border-[1px] border-200;
     }
 
     .btn-primary {
-        @apply bg-primary border-primary rounded-md p-2 text-600 outline-none cursor-pointer hover:bg-200 focus:outline-none active:outline-none dark:hover:bg-gray-800;
+        @apply bg-primary border-primary rounded-md p-2 text-800 outline-none cursor-pointer hover:bg-400 hover:text-white focus:outline-none active:outline-none dark:hover:bg-gray-800 dark:text-gray-400;
     }
 
     .dialog-border {

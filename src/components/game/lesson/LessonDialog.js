@@ -19,20 +19,20 @@ function LessonDialog({isOpen, onClose, onOk, selectedLessonId}) {
 
     return (
         <Dialog as="div" open={isOpen} onClose={function () {}} className={`${theme} fixed inset-0 z-[100] `}>
-            <div className="min-h-screen px-8 -mt-8 lg:mt-0 xl:px-4 text-center ring-0 outline-none">
-                <Dialog.Overlay className="fixed inset-0 bg-gradient-to-br from-blue-400 via-400 to-indigo-400  ring-0 outline-none" />
+            <div className="min-h-screen px-8 lg:mt-0 xl:px-4 text-center ring-0 outline-none xl:mt-[-1.2rem] dark:mt-[-1.2rem]">
+                <Dialog.Overlay className="fixed inset-0 bg-gradient-to-r from-100 via-50 to-100 ring-0 outline-none dark:bg-gradient-to-tb dark:from-slate-400 dark:via-slate-600 dark:to-slate-400" />
                 {/* This element is to trick the browser into centering the modal contents. */}
                 <span
                     className="inline-block h-screen align-middle"
                     aria-hidden="true"
                 />
-                <div className="my-8 inline-block sm:h-[calc(100vh-4rem)] xl:h-[calc(100vh-7rem)] w-full max-w-6xl transform rounded-md bg-white text-left align-middle shadow  ring-0 outline-none">
-                    <div className="flex h-full sm:min-h-[calc(100vh-4rem)] w-full flex-col overflow-hidden rounded-md  ring-0 outline-none">
+                <div className="my-8 inline-block sm:h-[calc(100vh-4rem)] xl:h-[calc(100vh-7rem)] w-full max-w-6xl transform rounded-md bg-white text-left align-middle ring-0 outline-none dark:bg-gray-700">
+                    <div className="flex h-full sm:min-h-[calc(100vh-4rem)] w-full flex-col overflow-hidden rounded-md ring-0 outline-none">
                         <Dialog.Title
                             as="div"
-                            className="min-h-4 flex p-2 mb-1 text-xl font-medium leading-6 text-500 bg-300  ring-0 outline-none"
+                            className="min-h-4 flex px-2 py-3 mb-1 text-xl font-medium leading-6 text-500 bg-300  ring-0 outline-none dark:bg-gray-800"
                         >
-                            <span className="block mt-1 text-900 drop-shadow-md  ring-0 outline-none">Choose a lesson</span>
+                            <span className="block mt-1 text-900 drop-shadow-md ring-0 outline-none dark:text-gray-200">Choose a lesson</span>
                             <button
                                 type="button"
                                 className="btn-primary ml-auto block rounded-full p-1 ring-0 outline-none"
@@ -52,10 +52,10 @@ function LessonDialog({isOpen, onClose, onOk, selectedLessonId}) {
                                 </svg>
                             </button>
                         </Dialog.Title>
-                        <div className="min-h-[20rem] flex-1 overflow-hidden  ring-0 outline-none">
+                        <div className="min-h-[20rem] flex-1 overflow-hidden ring-0 outline-none bg-white dark:bg-gray-700">
                             <LessonPanelContainer canLoad={isOpen} onLessonSelect={handleLessonSelect} selectedLessonId={currentLessonId} />
                         </div>
-                        <div className="flex flex-none flex-shrink-0 justify-center space-x-2 p-2 bg-300 border-t-[1px] border-t-slate-100  ring-0 outline-none">
+                        <div className="flex flex-none flex-shrink-0 justify-center space-x-2 p-2 bg-300 border-t-[1px] border-t-slate-100 ring-0 outline-none dark:bg-gray-800 dark:border-t-0 ">
                             <button
                                 type="button"
                                 className="btn-primary w-24 py-1 px-4 ring-0 outline-none"

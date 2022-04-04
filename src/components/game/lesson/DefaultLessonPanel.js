@@ -12,7 +12,7 @@ function Tick() {
 
 function LessonInfo({label, value}) {
     return (
-        <div className="flex items-center justify-start text-[0.7rem] w-full py-[1px] border-t-[1px] border-t-200 bg-gradient-to-r from-100/40 via-100/60 to-50/90 text-900">
+        <div className="flex items-center justify-start text-[0.7rem] w-full py-[1px] border-t-[1px] border-t-200 bg-gradient-to-r from-100/40 via-100/60 to-50/90 text-900 dark:text-gray-400">
             <div className="flex items-center justify-start ml-6 w-1/2">
                 <span className="inline-block w-[8rem] text-left">{label}</span>
                 <span className="text-right w-[3rem]">{value}</span>
@@ -39,10 +39,10 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
         <>
             {
                 lesson.content.length > 8 ?
-                    <div className={`flex flex-wrap items-center justify-start border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] mx-8 w-[94%] first:mt-[0.8rem] first:ml-[2rem] relative ${selectedLessonId === lesson.id ? 'bg-100 text-slate-700' : 'text-slate-600'}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
+                    <div className={`flex flex-wrap items-center justify-start border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] mx-8 w-[94%] first:mt-[0.8rem] first:ml-[2rem] relative dark:border-gray-500 dark:bg-gray-800/30 dark:hover:bg-slate-800 ${selectedLessonId === lesson.id ? 'bg-100 text-slate-700 dark:bg-slate-800' : 'text-slate-600'}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
                         <div className="flex flex-wrap px-2 space-x-1">
                             {
-                                <p className="first:px-1 py-2 text-left text-sm">
+                                <p className="first:px-1 py-2 text-left text-sm dark:text-gray-200/60">
                                     {lesson.content.split('<br/>').reduce((acc, y) => `${acc ? `${acc} ` : ''}${y}`, '')}
                                 </p>
                             }
@@ -54,12 +54,12 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
                         <LessonInfo label="Practiced" value={practicedTimes} />
                     </div>
                     :
-                    <div className={`flex flex-col flex-wrap items-center justify-center border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] first:mt-[0.8rem] first:ml-[2rem] ${selectedLessonId === lesson.id ? 'bg-100' : ''}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
+                    <div className={`flex flex-col flex-wrap items-center justify-center border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] first:mt-[0.8rem] first:ml-[2rem] dark:border-gray-500 dark:bg-gray-800/30 dark:hover:bg-slate-800 ${selectedLessonId === lesson.id ? 'bg-100 dark:bg-slate-800' : ''}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
                         <ul className={`flex flex-wrap items-center justify-center space-y-1 text-base text-900 w-56 p-2 pb-3 relative ${lesson.content.length < 5 ? 'space-x-2' : 'space-x-[1px]'}`} >
                             {
                                 Array.from(lesson.content).map((x, i) => (
-                                    <li key={`${x}_${i}`} className="block flex-none w-[1.4rem] h-[1.5rem] rounded-md border-[1px] border-slate-400 bg-white text-slate-500 first:mt-1 font-lesson text-sm text-center">
-                                        <span className="block w-[1.4rem] h-[1.4rem]">{x}</span>
+                                    <li key={`${x}_${i}`} className="block flex-none w-[1.4rem] h-[1.5rem] rounded-md border-[1px] border-slate-400 bg-white text-slate-500 first:mt-1 font-lesson text-sm text-center dark:bg-gray-600">
+                                        <span className="block w-[1.4rem] h-[1.4rem] dark:text-gray-200">{x}</span>
                                     </li>
                                 ))
                             }
@@ -85,8 +85,8 @@ function LessonItemList({title, lessons, onLessonSelect, selectedLessonId}) {
         <div className="flex flex-col items-center justify-center w-full">
             {title ?
                 <div className="flex-1 flex flex-col w-full mt-[1rem] pb-1 px-4 items-start justify-start">
-                    <span className="block text-[0.8rem] text-800 w-fit pl-3 pr-10 bg-100 rounded-tl-2xl rounded-br-2xl rounded-bl-sm rounded-tr-sm border-[1px] border-b-0 border-r-0 border-300/60">{title}</span>
-                    <span className="block w-full border-b-[1px]  border-b-300/60 rounded-bl-full -mt-[1px]" />
+                    <span className="block text-[0.8rem] text-800 w-fit pl-3 pr-10 bg-100 rounded-tl-2xl rounded-br-2xl rounded-bl-sm rounded-tr-sm border-[1px] border-b-0 border-r-0 border-300/60 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-200">{title}</span>
+                    <span className="block w-full border-b-[1px]  border-b-300/60 rounded-bl-full -mt-[1px] dark:border-b-gray-500" />
                 </div> : null
             }
             <div className="flex flex-wrap items-start justify-start space-x-[2rem] space-y-[1rem] pl-[6px] w-[98%]">
@@ -123,7 +123,7 @@ function DefaultLessonPanel({lessons, onLessonSelect, selectedLessonId}) {
     }, lessons);
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-fit pb-2">
+        <div className="flex flex-col items-center justify-center w-full h-fit pb-2 dark:bg-gray-700">
             {
                 sortedLessonGroups.map(([key, values], i) => <LessonItemList key={`${key}_${i}`} title={key} lessons={values} onLessonSelect={onLessonSelect} selectedLessonId={selectedLessonId} />)
             }

@@ -22,7 +22,7 @@ const getStyle = (values) => {
 }
 
 const cmp = (prev, current) => prev.keyToPress === current.keyToPress;
-const pressStyle = "bg-sky-400/80 dark:bg-sky-400/80 dark:text-gray-800 text-800 border-[1px] border-sky-400 brightness-110 xl:animate-key_fadein";
+const pressStyle = "bg-sky-400/80 dark:bg-sky-400/80 dark:text-gray-800 text-800 border-[1px] border-sky-400 brightness-110 xl:animate-key_fadein dark:text-white";
 
 export const Key = React.memo(({values, textSpanStyle, keyToPress}) => {
     const cn = React.useMemo(() => {
