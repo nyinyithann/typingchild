@@ -52,7 +52,7 @@ function LessonPanelContainer({canLoad, onLessonSelect, selectedLessonId}) {
                         <Tab.Panels>
                             {
                                 lessonGroups.map(([key, values]) => (
-                                    <Tab.Panel as="div" key={key} className="flex h-[calc(100vh-24rem)] sm:h-[calc(100vh-2rem)] xl:h-[calc(100vh-13rem)] overflow-y-auto mr-2 ring-0 outline-none xl:mt-1 lesson-scrollbar dark:dark-scrollbar">
+                                    <Tab.Panel as="div" key={key} className="flex h-[calc(100vh-24rem)] sm:h-[calc(100vh-2rem)] md:h-[calc(100vh-20rem)] xl:h-[calc(100vh-16rem)] overflow-y-auto mr-2 ring-0 outline-none xl:mt-1 lesson-scrollbar dark:dark-scrollbar">
                                         <DefaultLessonPanel lessons={values} onLessonSelect={onLessonSelect} selectedLessonId={selectedLessonId} />
                                     </Tab.Panel>
                                 ))

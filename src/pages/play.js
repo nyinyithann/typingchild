@@ -19,6 +19,9 @@ function Play() {
             <div className="h-[3.6rem]">
                 <NavBar showAuth={true} />
             </div>
+            <div className="md:hidden md:h-0 w-[90%] m-auto bg-gradient-to-tr from-red-300/30 to-pink-300/30 flex items-center border-b-2 border-b-red-600 animate-blink_cursor">
+                <p className="font-sans text-900 drop-shadow-md px-4 text-center">The app is designed to work on laptop or desktop computer. Please use one.</p>
+            </div>
             <div className="flex flex-col items-center justify-center w-full h-[calc(100vh-3.7rem)] overflow-auto xl:overflow-x-hidden xl:overflow-y-scroll 2xl:overflow-hidden scrollbar dark:dark-scrollbar">
                 <div className="flex items-center justify-center w-[99vw]">
                     <GameBoard />

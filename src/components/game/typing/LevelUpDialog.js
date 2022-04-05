@@ -108,4 +108,4 @@ function LevelUpDialog({level, isOpen, onClose}) {
     )
 }
 
-export default React.memo(LevelUpDialog);
+export default LevelUpDialog;

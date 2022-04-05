@@ -39,7 +39,7 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
         <>
             {
                 lesson.content.length > 8 ?
-                    <div className={`flex flex-wrap items-center justify-start border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] mx-8 w-[94%] first:mt-[0.8rem] first:ml-[2rem] relative dark:border-gray-500 dark:bg-gray-800/30 dark:hover:bg-slate-800 ${selectedLessonId === lesson.id ? 'bg-100 text-slate-700 dark:bg-slate-800' : 'text-slate-600'}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
+                    <div className={`flex flex-wrap items-center justify-start border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] mx-8  md:w-[90%] xl:w-[94%] first:mt-[0.8rem] first:ml-[2rem] relative dark:border-gray-500 dark:bg-gray-800/30 dark:hover:bg-slate-800 ${selectedLessonId === lesson.id ? 'bg-100 text-slate-700 dark:bg-slate-800' : 'text-slate-600'}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
                         <div className="flex flex-wrap px-2 space-x-1">
                             {
                                 <p className="first:px-1 py-2 text-left text-sm dark:text-gray-200/60">
@@ -55,7 +55,7 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
                     </div>
                     :
                     <div className={`flex flex-col flex-wrap items-center justify-center border-[1px] border-200 ring-0 outline-none active:outline-none hover:bg-100 hover:cursor-pointer shadow rounded-[1px] first:mt-[0.8rem] first:ml-[2rem] dark:border-gray-500 dark:bg-gray-800/30 dark:hover:bg-slate-800 ${selectedLessonId === lesson.id ? 'bg-100 dark:bg-slate-800' : ''}`} onClick={handleClick} onDoubleClick={handleDoubleClick}>
-                        <ul className={`flex flex-wrap items-center justify-center space-y-1 text-base text-900 w-56 p-2 pb-3 relative ${lesson.content.length < 5 ? 'space-x-2' : 'space-x-[1px]'}`} >
+                        <ul className={`flex flex-wrap items-center justify-center space-y-1 text-base text-900 md:w-40 xl:w-56 p-2 pb-3 relative ${lesson.content.length < 5 ? 'space-x-2' : 'space-x-[1px]'}`} >
                             {
                                 Array.from(lesson.content).map((x, i) => (
                                     <li key={`${x}_${i}`} className="block flex-none w-[1.4rem] h-[1.5rem] rounded-md border-[1px] border-slate-400 bg-white text-slate-500 first:mt-1 font-lesson text-sm text-center dark:bg-gray-600">

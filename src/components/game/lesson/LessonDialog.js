@@ -18,16 +18,16 @@ function LessonDialog({isOpen, onClose, onOk, selectedLessonId}) {
     };
 
     return (
-        <Dialog as="div" open={isOpen} onClose={function () {}} className={`${theme} fixed inset-0 z-[100] `}>
-            <div className="min-h-screen px-8 lg:mt-0 xl:px-4 text-center ring-0 outline-none xl:mt-[-1.2rem] dark:mt-[-1.2rem]">
-                <Dialog.Overlay className="fixed inset-0 bg-gradient-to-r from-100 via-50 to-100 ring-0 outline-none dark:bg-gradient-to-tb dark:from-slate-400 dark:via-slate-600 dark:to-slate-400" />
+        <Dialog as="div" open={isOpen} onClose={function () {}} className={`${theme} fixed inset-0 z-[100]`}>
+            <div className="min-h-screen px-8 xl:px-4 text-center ring-0 outline-none drop-shadow-2xl md:mt-[-2.4rem] lg:mt-[-3rem] xl:mt-[0rem]">
+                <Dialog.Overlay className="fixed inset-0 bg-gradient-to-t from-100 via-400/80 to-100 ring-0 outline-none dark:bg-gradient-to-tb dark:from-slate-400 dark:via-slate-600/80 dark:to-slate-400" />
                 {/* This element is to trick the browser into centering the modal contents. */}
                 <span
                     className="inline-block h-screen align-middle"
                     aria-hidden="true"
                 />
-                <div className="my-8 inline-block sm:h-[calc(100vh-4rem)] xl:h-[calc(100vh-7rem)] w-full max-w-6xl transform rounded-md bg-white text-left align-middle ring-0 outline-none dark:bg-gray-700">
-                    <div className="flex h-full sm:min-h-[calc(100vh-4rem)] w-full flex-col overflow-hidden rounded-md ring-0 outline-none">
+                <div className="my-8 inline-block sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-10rem)] xl:h-[calc(100vh-7rem)] w-full max-w-6xl transform rounded-md bg-white text-left align-middle ring-0 outline-none dark:bg-gray-700">
+                    <div className="flex h-full w-full flex-col overflow-hidden rounded-md ring-0 outline-none">
                         <Dialog.Title
                             as="div"
                             className="min-h-4 flex px-2 py-3 mb-1 text-xl font-medium leading-6 text-500 bg-300  ring-0 outline-none dark:bg-gray-800"
