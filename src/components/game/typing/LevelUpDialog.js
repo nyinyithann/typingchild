@@ -35,8 +35,12 @@ function LevelUpDialog({level, isOpen, onClose}) {
             }
         });
         getUrl();
+
+        const timeout = setTimeout(onClose, 1000 * 60);
         const interval = setInterval(getUrl, 3000);
+
         return () => {
+            clearTimeout(timeout);
             clearInterval(interval);
             setConfettiProps(prev => ({
                 ...prev,
@@ -65,22 +69,22 @@ function LevelUpDialog({level, isOpen, onClose}) {
                         }}
                     /> : null
             }
-            <div className="min-h-screen px-8 -mt-8 lg:mt-0 xl:px-4 text-center ring-0 outline-none relative">
-                <span
-                    type="button"
-                    className="absolute right-4 top-10 md:right-3 md:top-9 xl:right-2 xl:top-2 block rounded-md py-2 px-4 ring-0 outline-none bg-100 z-50 hover:bg-700 text-900 hover:text-100 shadow shadow-200 hover:cursor-pointer"
-                    onClick={onClose}
-                >
-                    Click here to continue your lesson
-                </span>
-                <Dialog.Overlay className="fixed inset-0 bg-gradient-to-br from-blue-400 via-400 to-indigo-400" />
+            <div className="min-h-screen px-8 -mt-8 lg:mt-0 xl:px-4 text-center ring-0 outline-none">
+                <Dialog.Overlay className="fixed inset-0 bg-gradient-to-br from-blue-400 via-400 to-indigo-400 dark:bg-slate-500" />
                 {/* This element is to trick the browser into centering the modal contents. */}
                 <span
                     className="inline-block h-screen align-middle"
                     aria-hidden="true"
                 />
                 <div className="inline-block h-full w-full transform rounded-md text-left align-middle bg-transparent">
-                    <div className="flex h-full min-h-[calc(100vh-12rem)] w-full flex-col overflow-hidden rounded-md">
+                    <button
+                        type="button"
+                        className="block rounded-md w-[20rem] text-sm lg:text-base m-auto text-center py-2 px-4 ring-0 outline-none bg-300/80 z-50 text-700 hover:text-900 hover:cursor-pointer bg-opacity-60 dark:bg-slate-200"
+                        onClick={onClose}
+                    >
+                        Click here to continue your lesson
+                </button>
+                    <div className="flex h-full max-h-[calc(100vh-12rem)] w-full flex-col overflow-hidden rounded-md">
                         <div id="levelup-msg-container" className="min-h-[24rem] flex flex-col items-center justify-center flex-1 overflow-hidden space-y-4">
                             <div className="flex flex-col space-y-4 items-center justify-center md:text-4xl font-primary pt-0 md:pt-6 text-center mt-0 text-900 drop-shadow">
                                 <span className="text-yellow-900 text-base md:text-[2rem] block mt-2">👏👏👏</span>

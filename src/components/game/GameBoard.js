@@ -220,7 +220,6 @@ export default function GameBoard() {
             <ToastPanel toast={t} showThumb={true} info={['You just finished a lesson.', `You earned ${bonusPoints} bonus points for finishing the lesson.`]} />
         ));
         const nextLessonId = getNextLessonId(selectedLessonIdRef.current);
-        //updateLastLessonId(nextLessonId);
         updatePracticedLesson(selectedLessonIdRef.current, nextLessonId);
     }, []);
 
@@ -251,7 +250,7 @@ export default function GameBoard() {
     }, []);
 
     return (
-        <div className="flex h-screen w-full flex-col py-[1rem] sm:py-20 md:py-[2rem] xl:py-[2.5rem]">
+        <div className="flex h-screen w-full flex-col py-[3rem] sm:py-20 md:py-[3rem] xl:py-[3rem]">
             <Toaster position="top-right" toastOptions={{
                 duration: 3000,
                 style: {
@@ -259,7 +258,7 @@ export default function GameBoard() {
                     margin: '2rem 0 0 0',
                 },
             }} />
-            <div className="grid auto-rows-min content-center gap-4 px-4 md:px-[4rem] xl:px-[16rem] 2xl:px-[22rem]">
+            <div className="grid auto-rows-min content-center gap-4 px-6 md:px-[4rem] xl:px-[16rem] 2xl:px-[22rem]">
                 <div className="flex w-full space-x-1 text-lg h-fit">
                     <ScoreBox level={level} xp={xp} levelXP={levelXP} />
                     <div className="flex-1 flex items-center justify-start space-x-4 invisible lg:visible xl:pl-4">
@@ -289,7 +288,7 @@ export default function GameBoard() {
                     </div>
                 </div>
                 <div className={`invisible w-0 h-0 md:w-full md:h-fit md:py-1 bg-gradient-to-tr from-red-300/30 to-pink-300/30 flex items-center border-b-2 border-b-red-600 animate-blink_cursor ${notifiable && !notiClose ? 'md:visible' : 'md:hidden'}`}>
-                    <p className="font-sans text-900 drop-shadow-md px-4">Please login to save your levels and points.</p>
+                    <p className="font-sans text-900 drop-shadow-md px-4 dark:text-gray-400">Please login to save your levels and points.</p>
                     <button
                         type="button"
                         className="ml-auto block rounded-full p-1 ring-0 outline-none mr-4 bg-red-200"

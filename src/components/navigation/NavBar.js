@@ -14,8 +14,8 @@ function Navbar({showAuth}) {
                 <div className="flex items-center justify-between w-full">
                     <div className="flex items-center justify-center space-x-6">
                         <div className="flex h-10 items-center justify-center">
-                            <img src="static/images/logo.png" alt="" className="w-[1.8rem] h-[1.8rem] mr-2 dark:grayscale-[70%]" />
-                            <Greeting className="font-brand text-2xl md:text-4xl font-extrabold text-700 tracking-wide drop-shadow-xl antialiased dark:text-gray-400" name={authUser?.name} brand={`${showAuth ? '' : 'Typing Child'}`} />
+                            <img src="static/images/logo.png" alt="" className="w-[1.8rem] h-[1.8rem] mr-2 dark:grayscale-[90%]" />
+                            <Greeting className="font-brand text-xl md:text-4xl font-extrabold text-700 tracking-wide drop-shadow-xl antialiased dark:text-gray-400" name={authUser?.name} brand={`${showAuth ? '' : 'Typing Child'}`} />
                         </div>
                     </div>
                     {
