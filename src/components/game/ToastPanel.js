@@ -2,7 +2,7 @@ import React from "react"
 
 function InfoLine({text}) {
     return (
-        <p className="text-lg font-primary text-left text-transparent bg-clip-text bg-gradient-to-br from-600 via-700 to-900 drop-shadow-lg dark:text-slate-300">
+        <p className="text-lg font-sans text-left text-transparent bg-clip-text bg-gradient-to-br from-600 via-700 to-900 drop-shadow-lg dark:text-slate-300">
             {text}
         </p>
     );

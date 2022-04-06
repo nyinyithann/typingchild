@@ -8,6 +8,8 @@ function LevelUpDialog({level, isOpen, onClose}) {
     const {theme} = React.useContext(ThemeSwitchContext);
     const [giphyUrl, setGiphyUrl] = useState();
     const [confettiProps, setConfettiProps] = useState({opacity: 0.0, run: false, width: 800, height: 400});
+    const [time, setTime] = useState(0);
+
 
     useEffect(() => {
         document.activeElement.blur();
@@ -36,11 +38,21 @@ function LevelUpDialog({level, isOpen, onClose}) {
         });
         getUrl();
 
-        const timeout = setTimeout(onClose, 1000 * 60);
-        const interval = setInterval(getUrl, 3000);
+        let s = 0;
+        const interval = setInterval(() => {
+            s = s + 1;
+            if (s > 60) {
+                s = 0;
+                onClose();
+            } else {
+                if (s % 3 === 0) {
+                    getUrl();
+                }
+                setTime(s);
+            }
+        }, 1000);
 
         return () => {
-            clearTimeout(timeout);
             clearInterval(interval);
             setConfettiProps(prev => ({
                 ...prev,
@@ -79,10 +91,10 @@ function LevelUpDialog({level, isOpen, onClose}) {
                 <div className="inline-block h-full w-full transform rounded-md text-left align-middle bg-transparent">
                     <button
                         type="button"
-                        className="block rounded-md w-[20rem] text-sm lg:text-base m-auto text-center py-2 px-4 ring-0 outline-none bg-300/80 z-50 text-700 hover:text-900 hover:cursor-pointer bg-opacity-60 dark:bg-slate-200"
+                        className="block rounded-md w-fit text-sm lg:text-base m-auto text-center py-2 px-4 ring-0 outline-none bg-300/80 z-50 text-700 hover:text-900 hover:cursor-pointer bg-opacity-60 dark:bg-slate-200"
                         onClick={onClose}>
-                        Click to continue
-                </button>
+                        {`Click to continue  or await ${60} seconds - ${time}`}
+                    </button>
                     <div className="flex h-full max-h-[calc(100vh-12rem)] w-full flex-col overflow-hidden rounded-md">
                         <div id="levelup-msg-container" className="min-h-[24rem] flex flex-col items-center justify-center flex-1 overflow-hidden space-y-4">
                             <div className="flex flex-col space-y-4 items-center justify-center md:text-4xl font-primary pt-0 md:pt-6 text-center mt-0 text-900 drop-shadow">
