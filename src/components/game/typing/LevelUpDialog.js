@@ -80,9 +80,8 @@ function LevelUpDialog({level, isOpen, onClose}) {
                     <button
                         type="button"
                         className="block rounded-md w-[20rem] text-sm lg:text-base m-auto text-center py-2 px-4 ring-0 outline-none bg-300/80 z-50 text-700 hover:text-900 hover:cursor-pointer bg-opacity-60 dark:bg-slate-200"
-                        onClick={onClose}
-                    >
-                        Click here to continue your lesson
+                        onClick={onClose}>
+                        Click to continue
                 </button>
                     <div className="flex h-full max-h-[calc(100vh-12rem)] w-full flex-col overflow-hidden rounded-md">
                         <div id="levelup-msg-container" className="min-h-[24rem] flex flex-col items-center justify-center flex-1 overflow-hidden space-y-4">
