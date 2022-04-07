@@ -16,7 +16,7 @@ import {gameUserStoreSelector, lessonStoreSelector, useGameUserStore, useLessonS
 
 const lettersPerLine = 9;
 const linesPerSession = 2;
-const sessionsPerLesson = 2;
+const sessionsPerLesson = 3;
 const maxLettersPerLine = 50;
 
 const getMode = (content) => {

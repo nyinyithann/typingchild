@@ -2,7 +2,7 @@ import React from "react"
 
 function InfoLine({text}) {
     return (
-        <p className="text-lg font-sans text-left text-transparent bg-clip-text bg-gradient-to-br from-600 via-700 to-900 drop-shadow-lg dark:text-slate-300">
+        <p className="text-lg font-sans text-left text-transparent bg-clip-text bg-gradient-to-br from-700 via-800 to-900 drop-shadow-lg dark:text-slate-300">
             {text}
         </p>
     );
@@ -11,7 +11,7 @@ function InfoLine({text}) {
 function ToastPanel({toast, showThumb, info}) {
     return (
         <div className={`${toast.visible ? 'animate-enter' : 'animate-leave'} w-fit items-center justify-center bg-transparent rounded drop-shadow pointer-events-auto flex m-auto`}>
-            <div className="flex-1 flex w-full p-4 bg-white border-1 border-900 rounded items-center justify-center bg-gradient-to-bl from-cyan-200 via-200 to-sky-300 dark:bg-gray-600">
+            <div className="flex-1 flex w-full p-4 border-1 border-900 rounded items-center justify-center bg-gradient-to-bl from-cyan-200 via-400 to-blue-400 dark:bg-gray-600">
                 <div className="flex items-center justify-center space-x-4">
                     {
                         showThumb

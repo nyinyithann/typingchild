@@ -2,6 +2,8 @@ import create from 'zustand';
 import {getGameUser, addGameUser} from 'services/firebase/db';
 import {constructError, ERROR_TO_DISPLAY} from "util";
 
+const LEVEL_XP_INCREMENT = 100;
+
 export const defaultGameUser = {
     uid: undefined,
     level: 0,
@@ -78,7 +80,7 @@ const useGameUserStore = create((set, get) => ({
         const newXP = xpPlus % prev.levelXP;
         const currentLevelCheck = Math.floor(xpPlus / prev.levelXP);
         const newLevel = (prev.level || 0) + currentLevelCheck;
-        const newLevelXP = currentLevelCheck > 0 ? prev.levelXP + 25 : prev.levelXP;
+        const newLevelXP = currentLevelCheck > 0 ? prev.levelXP + LEVEL_XP_INCREMENT : prev.levelXP;
 
         const guser = lessonId > -1 /*default lesson id is -1*/ ? {
             ...prev,
