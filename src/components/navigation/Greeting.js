@@ -8,11 +8,10 @@ const getGreeting = (name) => {
 };
 
 function Greeting({brand, name = '', className}) {
-    const [greeting, setGreeting] = React.useState("");
-    React.useEffect(() => {
-        setGreeting(brand || getGreeting(name));
+    const greeting = React.useMemo(() => {
+        return brand || getGreeting(name);
     }, [brand, name]);
     return <span className={className}>{greeting}</span>;
 }
 
-export default React.memo(Greeting);
+export default Greeting;

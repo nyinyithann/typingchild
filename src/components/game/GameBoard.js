@@ -2,6 +2,7 @@ import {Vec} from '@nyinyithann/vec.js';
 import LessonDialog from 'components/game/lesson/LessonDialog';
 import ScoreBox from 'components/game/ScoreBox';
 import ToastPanel from 'components/game/ToastPanel';
+import Toggle from 'components/game/Toggle';
 import {LETTER_MODE, PARAGRAPH_MODE} from 'components/game/typing/lessonModes';
 import LetterTypingBoard from 'components/game/typing/LetterTypingBoard';
 import LevelUpDialog from 'components/game/typing/LevelUpDialog';
@@ -12,7 +13,6 @@ import React, {useEffect, useRef, useState} from "react";
 import toast, {Toaster} from 'react-hot-toast';
 import {useAuth} from 'services/firebase/auth';
 import {gameUserStoreSelector, lessonStoreSelector, useGameUserStore, useLessonStore} from 'stores';
-import Toggle from 'components/game/Toggle';
 
 const lettersPerLine = 9;
 const linesPerSession = 2;

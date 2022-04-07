@@ -75,4 +75,4 @@ function ErrorDialog({error, resetError}) {
     );
 }
 
-export default React.memo(ErrorDialog);
+export default ErrorDialog;

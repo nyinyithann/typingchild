@@ -27,4 +27,4 @@ function Loading({loading}) {
     );
 }
 
-export default React.memo(Loading);
+export default Loading;

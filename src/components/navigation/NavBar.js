@@ -39,4 +39,4 @@ function Navbar({showAuth}) {
     );
 }
 
-export default React.memo(Navbar);
+export default Navbar;

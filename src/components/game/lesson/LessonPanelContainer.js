@@ -1,8 +1,8 @@
 import {Tab} from '@headlessui/react';
-import React, {useState, useEffect} from 'react';
-import DefaultLessonPanel from 'components/game/lesson/DefaultLessonPanel';
 import {Vec} from '@nyinyithann/vec.js';
-import {useLessonStore, lessonStoreSelector} from 'stores';
+import DefaultLessonPanel from 'components/game/lesson/DefaultLessonPanel';
+import React, {useEffect, useState} from 'react';
+import {lessonStoreSelector, useLessonStore} from 'stores';
 
 const getParentTabHeaderStyle = (isSelected) => {
     const style = 'py-1 px-4 leading-5 text-900 w-[14rem] mt-1 bg-200/40 rounded-t-xl border-[1px] border-100 ring-0 outline-none invisible';

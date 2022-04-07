@@ -1,7 +1,7 @@
 import {Dialog} from '@headlessui/react';
 import LessonPanelContainer from 'components/game/lesson/LessonPanelContainer';
 import {ThemeSwitchContext} from 'components/providers/ThemeSwitchProvider';
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 function LessonDialog({isOpen, onClose, onOk, selectedLessonId}) {
     const {theme} = React.useContext(ThemeSwitchContext);
