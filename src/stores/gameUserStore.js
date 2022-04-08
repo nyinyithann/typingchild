@@ -2,7 +2,7 @@ import create from 'zustand';
 import {getGameUser, addGameUser} from 'services/firebase/db';
 import {constructError, ERROR_TO_DISPLAY} from "util";
 
-const LEVEL_XP_INCREMENT = 100;
+const LEVEL_XP_INCREMENT = 10;
 
 export const defaultGameUser = {
     uid: undefined,
