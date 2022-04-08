@@ -188,7 +188,7 @@ const ParagraphTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, les
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center space-y-4">
+        <div className="flex flex-col justify-center items-center space-y-4  xl:mt-[0.9rem] xl:space-y-[1.6rem]">
             <div className='h-fit ring-0 outline-none grid grid-cols-1 auto-rows-fr content-center px-[2px] lg:px-[12px] py-2 gap-y-[4px] rounded bg-opacity-60 backdrop-filter backdrop-blur-md bg-white/30 shadow dark:bg-gray-600/40'>
                 {
                     state.displayLines.map(l => {

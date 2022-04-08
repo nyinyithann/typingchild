@@ -186,7 +186,7 @@ const LetterTypingBoard = React.forwardRef(({lessonId, lessonBonusPoints, lesson
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center space-y-4">
+        <div className="flex flex-col justify-center items-center space-y-4 xl:mt-[2rem] xl:space-y-[2.8rem]">
             <div className='h-fit ring-0 outline-none grid grid-cols-9 grid-rows-2 gap-1 md:gap-2 content-center px-3'>
                 {state.headLine?.map((t) => {
                     return (
