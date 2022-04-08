@@ -1,6 +1,5 @@
 import {Menu} from '@headlessui/react';
 import {ThemeSwitchContext} from 'components/providers/ThemeSwitchProvider';
-import PropTypes from 'prop-types';
 import React, {useCallback} from 'react';
 
 function ColorButton({color, theme, onClick}) {
@@ -15,12 +14,6 @@ function ColorButton({color, theme, onClick}) {
         />
     );
 }
-
-ColorButton.propTypes = {
-    color: PropTypes.string.isRequired,
-    theme: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-};
 
 const themeList = [
     [
