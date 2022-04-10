@@ -1,6 +1,6 @@
 # TypingChild.Com | The best place for kids to learn touch-typing. 
 
-Live at: [www.typingchild.com](htts://www.typingchild.com)
+[www.typingchild.com](htts://www.typingchild.com)
 
 ### Screenshots
 
