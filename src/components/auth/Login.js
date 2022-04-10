@@ -1,9 +1,9 @@
 import {Menu} from '@headlessui/react';
-import React from 'react';
-import GoogleAuthBtn from 'components/auth/GoogleAuthBtn';
 import FacebookAuthBtn from 'components/auth/FacebookAuthBtn';
+import GoogleAuthBtn from 'components/auth/GoogleAuthBtn';
+import {FacebookAuthProvider, GoogleAuthProvider} from 'firebase/auth';
+import React from 'react';
 import {useAuth} from 'services/firebase/auth';
-import {GoogleAuthProvider, FacebookAuthProvider} from 'firebase/auth';
 
 function Login() {
     const {loggingIn, login} = useAuth();

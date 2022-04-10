@@ -2,7 +2,6 @@ import {openDB} from 'idb';
 
 const DBName = "TypingChildDatabase";
 const LessonStoreName = "lessons";
-const GameUserStoreName = "gameuser";
 
 function openConnection() {
     return openDB(DBName, 1, {
@@ -11,10 +10,6 @@ function openConnection() {
                 if (!db.objectStoreNames.contains(LessonStoreName)) {
                     const lessonsStore = db.createObjectStore(LessonStoreName, {keyPath: "id"});
                     lessonsStore.createIndex("id", "id");
-                }
-                if (!db.objectStoreNames.contains(GameUserStoreName)) {
-                    const gameUserStore = db.createObjectStore(GameUserStoreName, {keyPath: "uid"});
-                    gameUserStore.createIndex("uid", "uid");
                 }
             }
         }

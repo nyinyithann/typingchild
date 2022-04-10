@@ -1,5 +1,5 @@
-import {ActionManager, ExecuteCodeAction} from "@babylonjs/core/Actions";
 import {Engine, Scene} from '@babylonjs/core';
+import {ActionManager, ExecuteCodeAction} from "@babylonjs/core/Actions";
 import {ArcRotateCamera} from "@babylonjs/core/Cameras/arcRotateCamera";
 import {GlowLayer} from "@babylonjs/core/Layers/glowLayer";
 import {HighlightLayer} from "@babylonjs/core/Layers/highlightLayer";
@@ -22,7 +22,7 @@ import {ParticleSystem} from "@babylonjs/core/Particles/particleSystem";
 import '@babylonjs/loaders/glTF';
 import {WaterMaterial} from "@babylonjs/materials";
 import {useRouter} from 'next/router';
-import React, {useRef, useEffect} from "react";
+import React, {useEffect, useRef} from "react";
 
 const createBgMaterial = (url, scene) => {
     const mat = new BackgroundMaterial("background-texture", scene);
@@ -133,8 +133,12 @@ function createBillboard(scene, highlightLayer, interval, router) {
     bottomFrame.material = frameMat;
 
     const mat = new StandardMaterial("mat", scene);
-    mat.diffuseTexture = new Texture("static/images/1.png", scene);
+    const texture = new Texture("static/images/1.png", scene);
+    mat.ambientTexture = texture;
+    mat.ambientColor = Color3.White();
     mat.roughness = 1;
+    mat.opacityFresnel = false;
+    mat.opacityTexture = texture.texture;
     billboard.rotation = new Vector3(0, - Math.PI / 5.4, 0);
     billboard.material = mat;
 
@@ -165,7 +169,8 @@ function createBillboard(scene, highlightLayer, interval, router) {
         if (num > 5) {
             num = 1;
         }
-        billboard.material.diffuseTexture = new Texture(`static/images/${num}.png`, scene);
+        const texture = new Texture(`static/images/${num}.png`, scene);
+        billboard.material.ambientTexture = texture;
     }, 4000);
 
     return board;

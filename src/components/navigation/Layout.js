@@ -1,6 +1,6 @@
-import React from "react"
 import TpHead from 'components/navigation/Head';
 import Script from 'next/script';
+import React from "react";
 
 function Layout({children}) {
     return (

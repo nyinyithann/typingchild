@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
 import {Dialog} from '@headlessui/react';
 import {ThemeSwitchContext} from 'components/providers/ThemeSwitchProvider';
+import React, {useEffect, useState} from "react";
 import Confetti from 'react-confetti';
+
 const giphyAPIEndpoint = `https://api.giphy.com/v1/gifs/random?api_key=${process.env.NEXT_PUBLIC_GIPHY_API_KEY}&tag=winner+happy&rating=g`;
 
 function LevelUpDialog({level, isOpen, onClose}) {

@@ -123,10 +123,8 @@ export default function GameBoard() {
         loading: defaultLessonLoading,
         error: defaultLessonError,
         defaultLessons,
-        userLessons,
         selectedLesson,
         loadLessons,
-        setSelectedLesson,
         setSelectedLessonById,
         resetError: defaultLessonResetError,
         getNextLessonId

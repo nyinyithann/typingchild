@@ -1,6 +1,6 @@
 import {Dialog} from '@headlessui/react';
 import {ThemeSwitchContext} from 'components/providers/ThemeSwitchProvider';
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ERROR_TO_DISPLAY} from 'util';
 
 

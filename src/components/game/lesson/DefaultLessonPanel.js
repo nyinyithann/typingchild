@@ -1,5 +1,5 @@
-import React, {useMemo} from "react";
 import {Vec} from '@nyinyithann/vec.js';
+import React, {useMemo} from "react";
 import {gameUserStoreSelector, useGameUserStore} from 'stores';
 
 function Tick() {
@@ -63,7 +63,7 @@ function LessonItem({lesson, onLessonSelect, selectedLessonId}) {
                                     </li>
                                 ))
                             }
-                            <span className={`absolute -top-3 -right-2 bg-transparent ${selectedLessonId === lesson.id ? 'visible' : 'invisible'}`}>
+                            <span className={`absolute -top-3 -right-7 xl:-right-2 bg-transparent ${selectedLessonId === lesson.id ? 'visible' : 'invisible'}`}>
                                 <Tick />
                             </span>
                         </ul>

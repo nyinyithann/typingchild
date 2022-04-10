@@ -1,7 +1,7 @@
 import {Popover} from '@headlessui/react';
+import {useRouter} from 'next/router';
 import React from 'react';
 import {useAuth} from 'services/firebase/auth';
-import {useRouter} from 'next/router';
 
 function Profile() {
     const {authUser, logout} = useAuth();

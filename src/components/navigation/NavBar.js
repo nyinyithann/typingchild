@@ -1,8 +1,8 @@
+import Login from 'components/auth/Login';
+import Profile from 'components/auth/Profile';
+import Greeting from 'components/navigation/Greeting';
 import ThemeMenu from 'components/navigation/ThemeMenu';
 import React from 'react';
-import Greeting from 'components/navigation/Greeting';
-import Profile from 'components/auth/Profile';
-import Login from 'components/auth/Login';
 import {useAuth} from 'services/firebase/auth';
 
 function Navbar({showAuth}) {

@@ -108,6 +108,4 @@
     .dialog-border {
         @apply border-[1px] border-300;
     }
-
-    
 }

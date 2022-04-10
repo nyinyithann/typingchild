@@ -1,5 +1,5 @@
-import React from "react"
-import {LeftShiftKeys, LeftHandKeyMap} from 'components/game/keyboard/keyInfo';
+import {LeftHandKeyMap, LeftShiftKeys} from 'components/game/keyboard/keyInfo';
+import React from "react";
 
 const baseHandStyle = "w-[100%] h-auto absolute origin-top-left scale-50 opacity-60 lg:animate-hand_fadein";
 

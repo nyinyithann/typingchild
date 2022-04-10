@@ -165,11 +165,6 @@ module.exports = {
                 hand_fadein: "hand_fadein 0.8s linear forwards",
             },
             screens: {
-                // xs: {max: '575px'}, // Mobile (iPhone 3 - iPhone XS Max).
-                // sm: {min: '576px', max: '897px'}, // Mobile (matches max: iPhone 11 Pro Max landscape @ 896px).
-                // md: {min: '898px', max: '1199px'}, // Tablet (matches max: iPad Pro @ 1112px).
-                // lg: {min: '1200px'}, // Desktop smallest.
-                // xl: {min: '1159px'}, // Desktop wide.
                 'sm': '640px',
                 'md': '768px',
                 'lg': '1024px',
