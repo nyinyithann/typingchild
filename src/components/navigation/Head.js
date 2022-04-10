@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React from "react";
 
 const title = 'TypingChild-The best place for kids to learn touch-typing.';
-const description = 'TypingChild provides free touch-typing lesssons for kids. TypingChild is the best place for kids to learn touch-typing.';
+const description = 'TypingChild provides free touch-typing lessons for kids. TypingChild emphasises accuracy over speed. TypingChild is the best place for kids to learn touch-typing.';
 
 function TpHead() {
     return (
