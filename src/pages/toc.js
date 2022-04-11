@@ -3,12 +3,12 @@ import React from 'react';
 function TOC() {
     return (
         <div className="p-4 bg-white">
-            <h1 className="font-bold text-xl p-4">Terms and Conditions</h1>
+            <h1 className="font-bold text-xl py-4">Terms and Conditions</h1>
             <p>Please read these terms and conditions carefully before using Our Service.</p>
-            <h1 className="font-bold text-xl p-4">Interpretation and Definitions</h1>
-            <h2 className="font-bold text-lg p-4">Interpretation</h2>
+            <h1 className="font-bold text-xl py-4">Interpretation and Definitions</h1>
+            <h2 className="font-bold text-lg py-4">Interpretation</h2>
             <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
-            <h2 className="font-bold text-lg p-4">Definitions</h2>
+            <h2 className="font-bold text-lg py-4">Definitions</h2>
             <p>For the purposes of these Terms and Conditions:</p>
             <ul className="list-disc ml-8">
                 <li>
