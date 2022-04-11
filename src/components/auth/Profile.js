@@ -30,9 +30,9 @@ function Profile() {
                             <DefaultProfileImage className="h-6 w-6" />
                     }
                 </Popover.Button>
-                <Popover.Panel className="absolute right-[-4px] top-10 z-50 w-[16rem] rounded-md border-[1px] border-400 bg-200 shadow-lg dark:bg-gray-600 dark:border-gray-700">
-                    <div className="flex flex-col items-stretch justify-start space-y-2">
-                        <div className="flex items-center justify-start p-2">
+                <Popover.Panel className="absolute right-[-4px] top-10 z-50 w-[16rem] rounded shadow-md bg-500 dark:bg-gray-700">
+                    <div className="flex flex-col items-stretch justify-start space-y-[1px]">
+                        <div className="flex items-center justify-start p-2 bg-300/80 dark:bg-gray-600/80 rounded-t">
                             {
                                 authUser?.photoURL ?
                                     <img
@@ -43,14 +43,14 @@ function Profile() {
                                     :
                                     <DefaultProfileImage className="h-24 w-24" />
                             }
-                            <span className="ml-2 text-lg text-700 dark:text-gray-400">{`${
+                            <span className="ml-2 text-lg text-900 dark:text-gray-400">{`${
                                 authUser?.name ?? 'Hi'
                                 }`}</span>
                         </div>
-                        <div className="flex items-center justify-center border-t-[1px] border-200 p-2">
+                        <div className="flex items-center justify-center p-2 bg-300/80  dark:bg-gray-600/80">
                             <button
                                 type="button"
-                                className="btn-primary flex w-full items-center justify-center space-x-4 dark:text-gray-400"
+                                className="btn-primary flex w-full items-center justify-center space-x-4 dark:text-gray-400 dark:border-gray-700 text-900 bg-300"
                                 onClick={handleLogout}
                             >
                                 <svg
@@ -71,6 +71,12 @@ function Profile() {
                                     Sign out
                                         </span>
                             </button>
+                        </div>
+                        <div className="grid grid-cols-2 grid-rows-2 content-center px-4 py-2 bg-300/80  dark:bg-gray-600/80 dark:text-slate-400/80 rounded-b">
+                            <a target="_blank" href="https://www.typingchild.com/privacy/privacypolicy" className="text-900/70 font-sans text-[0.8rem] 2xl:text-[0.7rem] px-1 hover:underline">Privacy Policy</a>
+                            <a target="_blank" href="https://www.typingchild.com/privacy/datadeletionpolicy" className="text-900/70 font-sans text-[0.8rem] 2xl:text-[0.7rem] px-1 hover:underline">Data Policy</a>
+                            <a target="_blank" href="https://www.typingchild.com/privacy/cookiepolicy" className="text-900/70 font-sans text-[0.8rem] 2xl:text-[0.7rem] px-1 hover:underline">Cookie Policy</a>
+                            <a target="_blank" href="https://www.typingchild.com/toc" className="text-900/70 font-sans text-[0.8rem] 2xl:text-[0.7rem] px-1 hover:underline">Terms of service</a>
                         </div>
                     </div>
                 </Popover.Panel>

@@ -83,12 +83,11 @@ function ThemeMenu() {
             </Menu.Button>
             <Menu.Items
                 as="div"
-                className="shadow-lg; absolute right-1 top-6 mt-4 flex
-            w-[12rem] origin-top-right flex-col rounded border-[1px] border-400
-            bg-200 p-1 focus:outline-none md:w-40 dark:bg-gray-600 dark:border-gray-700"
+                className="shadow-md absolute right-1 top-6 mt-4 flex rounded
+            w-[12rem] origin-top-right flex-col bg-500 focus:outline-none md:w-40 dark:bg-gray-600 dark:border-gray-700"
             >
                 <Menu.Item>
-                    <div className="z-10 flex flex-col">
+                    <div className="z-10 flex flex-col bg-300/80 p-1 rounded">
                         {themeList.map((x, i) => (
                             /* eslint-disable react/no-array-index-key */
                             <div

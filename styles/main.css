@@ -66,8 +66,8 @@
 
 @layer components {
     .theme-btn {
-        @apply flex h-8 w-8 items-center justify-center rounded-full p-1 shadow-lg shadow-200
-            hover:ring-2 hover:ring-300 focus:outline-none
+        @apply flex h-8 w-8 items-center justify-center rounded-full p-1 shadow-lg shadow-600
+            hover:ring-2 hover:ring-300 focus:outline-none dark:shadow-xl dark:shadow-gray-800
             md:h-6 md:w-6;
     }
     .google-auth-btn {
